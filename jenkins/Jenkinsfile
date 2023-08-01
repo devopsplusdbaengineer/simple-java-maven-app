@@ -23,3 +23,35 @@ pipeline {
         }
     }
 }
+/*
+pipeline {
+    agent any
+    stages {
+        stage("Clean Up"){
+            steps {
+                deleteDir()
+            }
+        }
+        stage("Clone Repo"){
+            steps {
+                echo "First Poll YEAHHH"
+            }
+        }
+        stage("Build"){
+            steps {
+                dir("simple-java-maven-app") {
+                    sh "mvn clean package"
+                    }
+                }
+            }
+        }
+        stage("Test"){
+            steps {
+                dir("simple-java-maven-app") {
+                    sh "mvn test"
+                }
+            }
+        }
+    }
+}
+*/
